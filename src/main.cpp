@@ -15,7 +15,7 @@ void mostrar_menu() {
 }
 
 int main() {
-    Agenda* agenda = new Agenda;
+    Agenda* agenda = nullptr; // PENSAR SI ES CORRECTO //
     try {
         procesarArchivo(agenda, RUTA_ARCHIVO);
     } catch (ArchivoNoExistenteException& e) {
@@ -24,42 +24,29 @@ int main() {
         return 0;
     }
 
-    // ACLARACION: El switch y las distintas opciones deberian estar separadas. Mantengo en el main() para que se vea lo
-    // que complete.
+    // ACLARACION: El switch y las distintas opciones deberian estar separadas. Se puede dejar el codigo en el main()
+    // durante la clase.
     int opcion;
     do {
         mostrar_menu();
         cin >> opcion;
         switch (opcion) {
             case 1: {
-                string numero, nombre, apellido;
-                do {
-                    cout << "Ingrese un numero, luego un nombre, luego un apellido." << endl;
-                    cin >> numero;
-                    cin >> nombre;
-                    cin >> apellido;
-                } while (!esNumeroValido(numero));
-                Contacto* contacto = generarContacto((unsigned int) stoi(numero), nombre, apellido);
-                try {
-                    agregarContacto(agenda, contacto);
-                    cout << "El contacto se dio de alta correctamente." << endl;
-                } catch (ContactoRepetidoException& e) {
-                    cout << "Error: ya existe un contacto con el numero ingresado" << endl;
-                }
+
+                // COMPLETAR //
+
                 break;
             }
             case 2: {
-                for (int i = 0; i < agenda->cantidad_contactos; i++) {
-                    cout << agenda->contactos[i]->numero << " - " << agenda->contactos[i]->apellido << ", "
-                         << agenda->contactos[i]->nombre << endl;
-                }
+
+                // COMPLETAR //
+
                 break;
             }
             case 3:
-                for (int i = 0; i < agenda->cantidad_contactos; i++) {
-                    cout << &(agenda->contactos[i]) << " - " << agenda->contactos[i] << " - "
-                         << &(agenda->contactos[i]->numero) << " - " << agenda->contactos[i]->numero << endl;
-                }
+
+                // COMPLETAR //
+
                 break;
             case 4:
                 cout << "Terminando programa." << endl;
@@ -69,9 +56,8 @@ int main() {
         }
     } while (opcion != 4);
 
-    for (int i = 0; i < agenda->cantidad_contactos; i++) {
-        delete agenda->contactos[i];
-    }
-    liberarMemoria(agenda);
-    delete agenda;
+
+    // COMPLETAR //
+
+    // NOTA: Pensar que memoria fue inicializada y liberar correctamente.
 }
