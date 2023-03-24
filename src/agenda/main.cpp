@@ -9,7 +9,7 @@
 using namespace std;
 
 int main() {
-    Agenda* agenda = new Agenda;
+    Agenda* agenda = nullptr; // VER SI ES CORRECTO //
     try {
         procesarArchivo(agenda, RUTA_ARCHIVO);
     } catch (ArchivoNoExistenteException& e) {
@@ -25,10 +25,7 @@ int main() {
         procesarOpcion(agenda, opcion);
     } while (opcion != SALIR);
 
-    // Es responsabilidad del usuario liberar la memoria dinamica de los elementos array y no del array.
-    for (size_t i = 0; i < agenda->cantidad_contactos; i++) {
-        delete agenda->contactos[i];
-    }
-    liberarMemoria(agenda);
+    // COMPLETAR //
+    // NOTA: Ver que memoria se debe liberar y en que orden.
     return 0;
 }
