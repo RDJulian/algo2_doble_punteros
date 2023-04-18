@@ -35,3 +35,5 @@ Ejemplos de como utilizar doble punteros en C++. Clase de AyP2 1c2023 (23/3).
    doble puntero.<br>
    Luego, mostrar por pantalla la matriz nula, asignar algunos valores a índices válidos, volver a mostrar, finalmente
    liberar la memoria y terminar el programa.
+   
+[Enlace a la presentación](https://docs.google.com/presentation/d/1hQRzvdY_RspnpoUYFaMGksetigwWIUW6TR8ANdhcX3g/edit?usp=sharing)
